@@ -23,21 +23,22 @@ typedef struct	s_image {
 
 typedef struct s_fractol
 {
-    void        *mlx;
-    void        *mlx_win;
+	void        *mlx;
+	void        *mlx_win;
 	char		*name;
-    t_image     image;
-    t_complex   trans;
-    t_complex   julia;
-    double      zoom;
-    int         precision;
-    int         color;
+	t_image     image;
+	t_complex   trans;
+	t_complex   julia;
+	double      zoom;
+	int         precision;
+	int         color;
 }   t_fractol;
 
 int ft_strcmp(char *s1, char *s2);
 t_complex	square_complex(t_complex z, char *name_fract);
 double	ft_atod(char *s);
 t_complex	add_complex(t_complex a, t_complex b);
+void	fract_centring(t_fractol *fract);
 int color(int iter, t_fractol *fract);
 void	my_mlx_pixel_put(t_image *data, int x, int y, int color);
 int cros_fct(t_fractol **fract);
