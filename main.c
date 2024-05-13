@@ -13,9 +13,9 @@ void	init_fract(t_fractol *fract, char *name)
 		exit(1);
 	}
 	fract->image.img = mlx_new_image(fract->mlx, size, size);
-	fract->image.addr = mlx_get_data_addr(fract->mlx, 
-		&(fract->image.bits_per_pixel)
-		, &(fract->image.line_length), &(fract->image.endian));
+	fract->image.addr = mlx_get_data_addr(fract->image.img,
+			&(fract->image.bits_per_pixel), &(fract->image.line_length),
+			&(fract->image.endian));
 	fract_centring(fract);
 	// mlx_key_hook(fract->mlx_win, key_pres, fract);
 	// mlx_mouse_hook(fract->mlx_win, mouse_handling, fract);
@@ -23,9 +23,9 @@ void	init_fract(t_fractol *fract, char *name)
 void	fract_centring(t_fractol *fract)
 {
 	fract->precision = 42;
-	fract->trans.x = -1.337;
-	fract->trans.y = -1.337;
-	fract->zoom = 0.4 * size;
+	fract->trans.x = -1.737;
+	fract->trans.y = -1.737;
+	fract->zoom = 400;
 }
 int	main(int ac, char **av)
 {
@@ -38,7 +38,13 @@ int	main(int ac, char **av)
 	{
 		fract = malloc(sizeof (t_fractol));
 		init_fract(fract, av[1]);
-		printf("3iw!!\n");
+		if (!ft_strcmp(fract->name, "julia"))
+		{
+			fract->julia.x = ft_atod(av[2]);
+			fract->julia.y = ft_atod(av[3]);
+		}
+		rendring(fract);
+		mlx_loop(fract->mlx);
 	}
 	else
 		printf("outch\n");
