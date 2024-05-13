@@ -17,15 +17,16 @@ void	init_fract(t_fractol *fract, char *name)
 			&(fract->image.bits_per_pixel), &(fract->image.line_length),
 			&(fract->image.endian));
 	fract_centring(fract);
-	// mlx_key_hook(fract->mlx_win, key_pres, fract);
-	// mlx_mouse_hook(fract->mlx_win, mouse_handling, fract);
+	mlx_key_hook(fract->mlx_win, key_pres, fract);
+	mlx_mouse_hook(fract->mlx_win, mouse_handling, fract);
+	mlx_hook(fract->mlx_win, 17, 0L, clean_fract, fract);
 }
 void	fract_centring(t_fractol *fract)
 {
 	fract->precision = 42;
-	fract->trans.x = -1.737;
-	fract->trans.y = -1.737;
-	fract->zoom = 400;
+	fract->trans.x = -1.501337;
+	fract->trans.y = -1.501337;
+	fract->zoom = 0.37 * size;
 }
 int	main(int ac, char **av)
 {

@@ -23,6 +23,6 @@ int color(int iter, t_fractol *fract)
     color_tab[8] = 0xE6E6FA;
     color_tab[9] = 0xFF8C00;
     if (!ft_strcmp(fract->name, "julia"))
-        return (color_tab[(iter * 255) % 10]);
-    return (color_tab[iter % 10]);
+        return (color_tab[(iter * 255 + fract->color) % 10]);
+    return (color_tab[(iter + fract->color) % 10]);
 }

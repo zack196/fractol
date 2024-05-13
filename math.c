@@ -22,7 +22,6 @@ t_complex	square_complex(t_complex z, char *frac_name)
 	res.y = 2 * z.x * z.y;
 	if (!ft_strcmp(frac_name, "burning_ship"))
 	{
-		// printf("in\n");
 		res.y = 2 * abs_val(z.x) * abs_val(z.y);
 	}
 	return (res); 

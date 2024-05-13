@@ -65,5 +65,4 @@ void	rendring(t_fractol *fract)
         }
     }
     mlx_put_image_to_window(fract->mlx, fract->mlx_win, fract->image.img, 0, 0);
-    mlx_put_image_to_window(fract->mlx, fract->mlx_win, fract->image.img, 0, 0);
 }

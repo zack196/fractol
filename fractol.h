@@ -41,7 +41,7 @@ t_complex	add_complex(t_complex a, t_complex b);
 void	fract_centring(t_fractol *fract);
 int color(int iter, t_fractol *fract);
 void	my_mlx_pixel_put(t_image *data, int x, int y, int color);
-int cros_fct(t_fractol **fract);
+int clean_fract(t_fractol *fract);
 double	mod(t_complex z);
 void	rendring(t_fractol *fract);
 int key_pres(int button, t_fractol *fract);
