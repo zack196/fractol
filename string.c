@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   string.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zel-oirg <zel-oirg@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/14 08:27:09 by zel-oirg          #+#    #+#             */
+/*   Updated: 2024/05/14 08:56:20 by zel-oirg         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 int	ft_strcmp(char *s1, char *s2)
@@ -13,7 +25,7 @@ int	ft_strcmp(char *s1, char *s2)
 int	is_digit(char c)
 {
 	if ('0' <= c && c <= '9')
-    	return (1);
+		return (1);
 	return (0);
 }
 
@@ -45,7 +57,7 @@ double	ft_atod(char *s)
 	fractional_part = 0;
 	sign = +1;
 	pow = 1;
-	while (*s == '+'|| *s == '-')
+	while (*s == '+' || *s == '-')
 		if (*s++ == '-')
 			sign = -sign;
 	while (*s != '.' && *s)
@@ -58,4 +70,18 @@ double	ft_atod(char *s)
 		fractional_part = fractional_part + (*s++ - '0') * pow;
 	}
 	return ((integer_part + fractional_part) * sign);
+}
+
+void	ft_strput(char *s)
+{
+	int	i;
+
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i])
+	{
+		write(1, &s[i], 1);
+		i++;
+	}
 }
