@@ -6,7 +6,7 @@
 /*   By: zel-oirg <zel-oirg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 08:26:49 by zel-oirg          #+#    #+#             */
-/*   Updated: 2024/05/14 09:22:42 by zel-oirg         ###   ########.fr       */
+/*   Updated: 2024/05/15 20:09:46 by zel-oirg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-# define SIZE  800
+# define SIZE  0
 
 typedef struct s_complex
 {

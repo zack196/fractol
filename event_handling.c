@@ -6,7 +6,7 @@
 /*   By: zel-oirg <zel-oirg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 08:26:42 by zel-oirg          #+#    #+#             */
-/*   Updated: 2024/05/14 10:34:33 by zel-oirg         ###   ########.fr       */
+/*   Updated: 2024/05/15 19:45:27 by zel-oirg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 int	key_pres(int button, t_fractol *fract)
 {
 	if (button == 124)
-		fract->trans.x += 50 / fract->zoom;
-	else if (button == 123)
 		fract->trans.x -= 50 / fract->zoom;
+	else if (button == 123)
+		fract->trans.x += 50 / fract->zoom;
 	else if (button == 126)
-		fract->trans.y -= 50 / fract->zoom;
-	else if (button == 125)
 		fract->trans.y += 50 / fract->zoom;
+	else if (button == 125)
+		fract->trans.y -= 50 / fract->zoom;
 	else if (button == 8)
 		fract->color++;
 	else if (button == 69 && fract->precision < 200)
@@ -40,7 +40,7 @@ int	mouse_handling(int button, int x, int y, t_fractol *fract)
 {
 	double	zoom_factor;
 
-	zoom_factor = 2.4;
+	zoom_factor = 1.4;
 	if (button == 5)
 	{
 		fract->trans.x = (x / fract->zoom + fract->trans.x)
@@ -65,7 +65,6 @@ int	clean_fract(t_fractol *fract)
 {
 	mlx_destroy_image(fract->mlx, fract->image.img);
 	mlx_destroy_window(fract->mlx, fract->mlx_win);
-	free(fract);
 	exit(1);
 	return (1);
 }

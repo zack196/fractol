@@ -6,7 +6,7 @@
 /*   By: zel-oirg <zel-oirg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 08:27:09 by zel-oirg          #+#    #+#             */
-/*   Updated: 2024/05/14 08:56:20 by zel-oirg         ###   ########.fr       */
+/*   Updated: 2024/05/15 19:57:50 by zel-oirg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,20 @@ int	is_digit(char c)
 
 int	chec_julia(char *s)
 {
+	int	i;
+	
+	i = 0;
 	if (*s == '+' || *s == '-')
 		s++;
 	if (*s == '.')
 		return (0);
 	while (is_digit(*s) && *s != '.' && *s)
 		s++;
-	if (*s == '.')
+	if (*s == '.' && *(s + 1) != 0 && i < 6)
+	{
 		s++;
+		i++;
+	}	
 	while (is_digit(*s) && *s)
 		s++;
 	if (!*s)

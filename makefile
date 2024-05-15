@@ -13,9 +13,10 @@ SRCS = ./main.c\
 OBJ = $(SRCS:.c=.o)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -Imlx -c $< -o $@
+	$(CC) $(CFLAGS)  -Imlx -c $< -o $@
 
 all : $(NAME)
+
 
 $(NAME): $(OBJ) $(INCLUDE)
 	$(CC) $(OBJ) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
@@ -27,3 +28,5 @@ fclean : clean
 	rm -f $(NAME)
 
 re : fclean all
+
+.PHONY : clean
