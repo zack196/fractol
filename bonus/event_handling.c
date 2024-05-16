@@ -6,7 +6,7 @@
 /*   By: zel-oirg <zel-oirg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 08:26:42 by zel-oirg          #+#    #+#             */
-/*   Updated: 2024/05/16 19:17:58 by zel-oirg         ###   ########.fr       */
+/*   Updated: 2024/05/16 19:42:28 by zel-oirg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	key_pres(int button, t_fractol *fract)
 	rendring(fract);
 	return (0);
 }
+
 int	mouse_handling(int button, int x, int y, t_fractol *fract)
 {
 	double	zoom_factor;

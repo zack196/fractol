@@ -6,17 +6,16 @@
 /*   By: zel-oirg <zel-oirg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 08:26:49 by zel-oirg          #+#    #+#             */
-/*   Updated: 2024/05/16 19:18:28 by zel-oirg         ###   ########.fr       */
+/*   Updated: 2024/05/16 19:49:25 by zel-oirg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#ifndef FRACTOL_BONUS_H
+# define FRACTOL_BONUS_H
 
 # include <mlx.h>
 # include <unistd.h>
 # include <stdlib.h>
-#include<stdio.h>
 
 # define SIZE	800
 

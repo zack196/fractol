@@ -6,7 +6,7 @@
 /*   By: zel-oirg <zel-oirg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 08:26:54 by zel-oirg          #+#    #+#             */
-/*   Updated: 2024/05/16 19:17:02 by zel-oirg         ###   ########.fr       */
+/*   Updated: 2024/05/16 19:41:06 by zel-oirg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,8 @@ int	main(int ac, char **av)
 
 	if (SIZE == 0)
 		return (1);
-	if ((ac == 2 && !ft_strcmp(av[1], "mandelbrot")) || (ac == 4 && !ft_strcmp(av[1], "julia")
+	if ((ac == 2 && !ft_strcmp(av[1], "mandelbrot"))
+		|| (ac == 4 && !ft_strcmp(av[1], "julia")
 			&& chec_julia(av[2]) && chec_julia(av[3])))
 	{
 		init_fract(&fract, av[1]);
@@ -75,5 +76,5 @@ int	main(int ac, char **av)
 	}
 	ft_strput("Availible fractol : mandelbrot, julia, and burning ship\n");
 	ft_strput("If you choose julia, you should enter 2 double values!\n");
-	ft_strput("If you choose burning ship you should just make the bonus and run ./bonus_fract\n");
+	ft_strput("For burning ship you should make the bonus and run it\n");
 }

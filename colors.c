@@ -6,7 +6,7 @@
 /*   By: zel-oirg <zel-oirg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 08:26:37 by zel-oirg          #+#    #+#             */
-/*   Updated: 2024/05/16 19:01:03 by zel-oirg         ###   ########.fr       */
+/*   Updated: 2024/05/16 20:05:42 by zel-oirg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	my_mlx_pixel_put(t_image *data, int x, int y, int color)
 
 int	color(int iter, t_fractol *fract)
 {
-	int	color_tab[20];
+	int	color_tab[22];
 
 	color_tab[0] = 0x008080;
 	color_tab[1] = 0xFF7F50;
@@ -44,5 +44,7 @@ int	color(int iter, t_fractol *fract)
 	color_tab[17] = 0x8A2BE2;
 	color_tab[18] = 0x7B68EE;
 	color_tab[19] = 0x228B22;
-	return (color_tab[(iter * iter  + fract->color ) % 20] / fract->color);
+	color_tab[20] = 0xFF1493;
+	color_tab[21] = 0x40E0D0;
+	return (color_tab[(fract->color + iter % 6) % 22] / iter);
 }

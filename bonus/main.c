@@ -6,7 +6,7 @@
 /*   By: zel-oirg <zel-oirg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 08:26:54 by zel-oirg          #+#    #+#             */
-/*   Updated: 2024/05/16 19:15:46 by zel-oirg         ###   ########.fr       */
+/*   Updated: 2024/05/16 19:49:03 by zel-oirg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	fract_centring(t_fractol *fract)
 	fract->zoom = 0.32 * SIZE;
 }
 
-int	main()
+int	main(void)
 {
 	t_fractol	fract;
 
