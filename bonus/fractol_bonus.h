@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   fractol_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zel-oirg <zel-oirg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 08:26:49 by zel-oirg          #+#    #+#             */
-/*   Updated: 2024/05/16 19:23:41 by zel-oirg         ###   ########.fr       */
+/*   Updated: 2024/05/16 19:18:28 by zel-oirg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 # include <mlx.h>
 # include <unistd.h>
 # include <stdlib.h>
+#include<stdio.h>
 
-# define SIZE	600
+# define SIZE	800
 
 typedef struct s_complex
 {
@@ -60,7 +61,7 @@ void		rendring(t_fractol *fract);
 int			key_pres(int button, t_fractol *fract);
 char		*ft_strdup(const char *s1);
 int			mouse_handling(int button, int x, int y, t_fractol *fract);
-void		init_fract(t_fractol *fract, char *name);
+void		init_fract(t_fractol *fract);
 int			chec_julia(char *nb1);
 void		ft_strput(char *s);
 

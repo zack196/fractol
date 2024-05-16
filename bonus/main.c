@@ -6,19 +6,18 @@
 /*   By: zel-oirg <zel-oirg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 08:26:54 by zel-oirg          #+#    #+#             */
-/*   Updated: 2024/05/16 19:17:02 by zel-oirg         ###   ########.fr       */
+/*   Updated: 2024/05/16 19:15:46 by zel-oirg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "fractol_bonus.h"
 
-void	init_fract(t_fractol *fract, char *name)
+void	init_fract(t_fractol *fract)
 {
-	fract->name = name;
 	fract->mlx = mlx_init();
 	if (!fract->mlx)
 		exit(1);
-	fract->mlx_win = mlx_new_window(fract->mlx, SIZE, SIZE, fract->name);
+	fract->mlx_win = mlx_new_window(fract->mlx, SIZE, SIZE, "burning_ship");
 	if (!fract->mlx_win)
 		exit(1);
 	fract->image.img = mlx_new_image(fract->mlx, SIZE, SIZE);
@@ -40,40 +39,19 @@ void	fract_centring(t_fractol *fract)
 {
 	fract->precision = 42;
 	fract->color = 1;
-	if (!ft_strcmp(fract->name, "mandelbrot"))
-	{
-		fract->trans.x = -1.995015;
-		fract->trans.y = -1.268396;
-		fract->zoom = 0.378 * SIZE;
-	}
-	else if (!ft_strcmp(fract->name, "julia"))
-	{
-		fract->trans.x = -1.306686;
-		fract->trans.y = -1.316016;
-		fract->zoom = 0.378 * SIZE;
-	}
+	fract->trans.x = -2.017400;
+	fract->trans.y = -2.0;
+	fract->zoom = 0.32 * SIZE;
 }
 
-int	main(int ac, char **av)
+int	main()
 {
 	t_fractol	fract;
 
 	if (SIZE == 0)
 		return (1);
-	if ((ac == 2 && !ft_strcmp(av[1], "mandelbrot")) || (ac == 4 && !ft_strcmp(av[1], "julia")
-			&& chec_julia(av[2]) && chec_julia(av[3])))
-	{
-		init_fract(&fract, av[1]);
-		if (!ft_strcmp(fract.name, "julia"))
-		{
-			fract.julia.x = ft_atod(av[2]);
-			fract.julia.y = ft_atod(av[3]);
-		}
-		rendring(&fract);
-		mlx_loop(fract.mlx);
-		clean_fract(&fract);
-	}
-	ft_strput("Availible fractol : mandelbrot, julia, and burning ship\n");
-	ft_strput("If you choose julia, you should enter 2 double values!\n");
-	ft_strput("If you choose burning ship you should just make the bonus and run ./bonus_fract\n");
+	init_fract(&fract);
+	rendring(&fract);
+	mlx_loop(fract.mlx);
+	clean_fract(&fract);
 }
